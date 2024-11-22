@@ -3,7 +3,7 @@
     <title>Vue.js 애완용품샵</title>
     <meta charset="UTF-8">
     <script src="https://unpkg.com/vue"></script>
-    <script src="D:/work/vscode_proj/vue/node_modules/vue/dist/vue.js"></script>
+
   </head>
   <body>
     <div id="app">
@@ -11,6 +11,11 @@
         <h1 v-text="sitename"></h1>
       </header>
     </div>
+    <script type="module">
+      import VUE_PATH from '../js/config.js';
+    </script>
+
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
     <script type="text/javascript">
       var webstore = new Vue({
         el: '#app',
