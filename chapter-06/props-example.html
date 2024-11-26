@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
 </head>
 <body>
   <div id="app">
@@ -25,7 +25,7 @@
       obj: {
         type: Object,
         default: ()=> {
-          return {message: '안녕, 객체로부터'}
+          return {message: '객체!!'}
         }
       },
       even: {
@@ -41,7 +41,7 @@
     data() {
       return {
         passedString: '안녕, 부모로부터!',
-        myNumber: 43,
+        myNumber: 42,
         passedObject: {message: '넘겨준 객체'}
       }
     }
