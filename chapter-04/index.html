@@ -96,10 +96,12 @@
                 <div class="col-md-6 boxes">
                   <input type="checkbox"
                     id="gift" value="true"
-                    v-bind:true-value="order.sendGift"
-                    v-bind:false-value="order.dontSendGift"
-                    v-model="order.gift">
-                  <label for="checkbox">선물로 보내기?</label>
+                         v-bind:true-value="order.sendGift"
+                         v-bind:false-value="order.dontSendGift"
+
+                    v-model="order.giftyn"
+                    v-model="order.gift" v-on:click="testAlert">
+                  <label for="checkbox" >선물로 보내기?</label>
                 </div>
               </div>
               <div class="form-group">
@@ -166,8 +168,10 @@
           business: '직장 주소',
           home: '자택 주소',
           gift:'선물로 보내기',
-          sendGift: '선물로 보내기',
-          dontSendGift: '선물로 보내기 않기'
+          sendGift: 'Y',
+          dontSendGift: 'N',
+          giftyn: ''
+
         },
         product: {
           id: 1001,
@@ -188,7 +192,10 @@
         },
         submitForm() {
           alert('제출 완료');
-        }
+        },
+          testAlert() {
+                  alert('체크박스 클릭!! ' + this.order.giftyn);
+          }
       },
       computed: {
         cartItemCount() {
