@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://unpkg.com/vue"></script>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
 </head>
 <body>
   <div id="app">
@@ -9,7 +10,7 @@
   </div>
 <script>
 
-const BookComponent = function(resolve, reject) {
+const BookComponent = function(resolve, reject) {npm i -g @vue/cli-init
   setTimeout(function() {
     resolve({
       template: `
@@ -21,7 +22,7 @@ const BookComponent = function(resolve, reject) {
       `
     });
 
-  },1000);
+  },2000);
 
 }
 
