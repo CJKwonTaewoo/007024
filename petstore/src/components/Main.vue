@@ -106,6 +106,7 @@ export default {
         var priceString = (price / 100).toFixed(2);
         var priceArray = priceString.split("").reverse();
         var index = 3;
+
         while (priceArray.length > index + 3) {
           priceArray.splice(index+3, 0, ',');
           index += 4;
