@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
           <div class="panel panel-info">
-            <div class="panel-heading">애완용품샵 체크아웃</div>
+            <div class="panel-heading">TEST 체크아웃</div>
             <div class="panel-body">
               <div class="form-group">
                 <div class="col-md-12">

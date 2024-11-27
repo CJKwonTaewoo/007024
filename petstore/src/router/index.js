@@ -28,12 +28,12 @@ export default new Router({
       component: Product,
       props: true,
       children: [
-        {
-          path: 'edit',
-          name: 'Edit',
-          component: EditProduct,
-          props: true
-        }
+          {
+              path: 'edit',
+              name: 'Edit',
+              component: EditProduct,
+              props: true
+          }
       ]
     },
     {

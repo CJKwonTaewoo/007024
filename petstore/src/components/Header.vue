@@ -22,14 +22,14 @@ export default {
   name: 'my-header',
   data() {
     return {
-      sitename: "Vue.js Test"
+      sitename: "Vue.js Test2"
     }
   },
   props: ['cartItemCount'],
   methods: {
-    // showCheckout() {
-    //   this.$router.push({name: 'Form'});
-    // }
+    showCheckout() {
+      this.$router.push({name: 'Form'});
+    }
   }
 }
 </script>
