@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <script src="https://unpkg.com/vue"></script>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
   <div id="app">
-    <my-comp header="1">에릭</my-comp>
+    <my-comp header="4">Test</my-comp>
   </div>
 <script>
   Vue.component('my-comp', {
@@ -24,7 +24,7 @@
     },
     data() {
       return {
-        welcome: '안녕하세요 '
+        welcome: 'Hi'
       }
     },
     props: ['header']
