@@ -10,7 +10,6 @@
           </figure>
         </div>
         <div class="col-md-6 col-md-offset-0 description">
-          <!-- <h1 v-text="product.title"></h1> -->
           <router-link tag="h1"
               :to="{name: 'Id', params: {id: product.id}}">
             {{product.title}}
@@ -52,11 +51,11 @@
 
 <script>
 import MyHeader from './Header.vue';
+import {mapGetters} from 'vuex';
 export default {
   name: 'imain',
   data() {
     return {
-      products: [],
       cart: []
     }
   },
@@ -97,7 +96,13 @@ export default {
         }
         return productsArray.sort(compare);
       }
-    }
+    },
+    products() {
+      return this.$store.getters.products;
+    },
+    ...mapGetters([
+      'products'
+    ])
   },
   filters: {
     formatPrice(price) {
@@ -119,10 +124,7 @@ export default {
     }
   },
   created: function() {
-    axios.get('/static/products.json').then(response => {
-      this.products = response.data.products;
-      console.log(this.products);
-    });
+    this.$store.dispatch('initStore');
   }
 }
 </script>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <script src="https://unpkg.com/vue"></script>
-  <script src="https://unpkg.com/vuex"></script>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuex@3.6.2"></script>
 </head>
 <body>
   <div id="app">
@@ -18,32 +18,50 @@
         msg: 'Hello World',
         count: 0
       },
+      getters: {
+          msg(state) {
+              return state.msg.toUpperCase();
+          },
+          count(state) {
+              return state.count;
+          }
+      },
       mutations: {
-        increment(state, payload) {
-            state.count += payload;
-        }
+          increment(state, payload) {
+              state.count += payload;
+          }
+      },
+      actions: {
+          increment(context, payload) {
+              setTimeout(function() {
+                  context.commit('increment', payload);
+              }, 2000);
+          }
       }
   });
+
   new Vue({
       el: '#app',
       data() {
-        return {
-          header: 'Vuex 앱'
-        }
+          return {
+              header: 'Vuex Test'
+          }
       },
       computed: {
-        welcome() {
-          return store.state.msg;
-        },
-        counter() {
-          return store.state.count;
-        }
+          welcome() {
+              return store.getters.msg;
+          },
+          counter() {
+              return store.getters.count;
+          }
       },
       methods: {
-        increment() {
-          store.commit('increment', 10);
-        }
-      }
+          increment() {
+              store.dispatch('increment', 10);
+          }
+
+      },
+      store
   });
 </script>
 </body>
